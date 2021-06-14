@@ -1,0 +1,29 @@
+
+
+<div>
+   
+
+    <table class="table table-hover" >
+        <tr><th colspan="6">List of all upcoming elections</th></tr>
+        <tr>
+            <th>Election ID</th>
+            <th>Name</th>
+            <th>Election Date</th>
+            <th>Constituency</th>
+            <th>Counting Date</th>
+            <th>Upcoming</th>
+        </tr>
+        <tr *ngFor="let e of election" >
+            
+            <td *ngIf="e.Upcoming; else elseBlock">{{e.ElectionId}}</td>
+            <td *ngIf="e.Upcoming; else elseBlock">{{e.Name}}</td>
+            <td *ngIf="e.Upcoming; else elseBlock">{{e.Electiondate}}</td>
+            <td *ngIf="e.Upcoming; else elseBlock">{{e.Constituency}}</td>
+            <td *ngIf="e.Upcoming; else elseBlock">{{e.Countingdate}}</td>
+            <td *ngIf="e.Upcoming; else elseBlock">
+                <button (click)="EditUpcoming(e)" class="btn btn-danger">Edit</button> 
+            </td>
+        </tr>
+     </table>   
+</div>
+

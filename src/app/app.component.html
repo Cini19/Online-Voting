@@ -1,0 +1,24 @@
+<div id="nav" *ngIf="!log.getLogin();else elseBlock;">
+  <nav>
+      <ul>
+          <li><a><i>
+              VoteOnline</i></a>
+          </li>
+          <li ><a routerLink="login">Login</a></li>
+          <li><a routerLink="signup">SignUp</a></li>
+      </ul>
+  </nav>
+</div>
+<div id="nav" *ngIf="log.getLogin();else elseBlock;">
+    <nav>
+        <ul>
+            <li><a><i>
+                VoteOnline</i></a>
+            </li>
+            <li><a class="left">Hi &nbsp; {{log.getUser()}}</a></li>
+            <li><a (click)="logout()">Logout</a></li>
+        </ul>
+    </nav>
+</div>
+  
+<router-outlet></router-outlet>

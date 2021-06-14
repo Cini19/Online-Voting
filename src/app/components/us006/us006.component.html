@@ -1,0 +1,55 @@
+
+<div id="us006">
+        <h4>Voting</h4><br/>
+        <form #fvote="ngForm" (ngSubmit)="allowVoting(fvote.value)">
+            Enter Voter Id  :<input type="text" class="form-control" ngModel name="Voterid" placeholder="Voter Id">
+            <br/>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <br/>
+    </form>
+</div>
+<div id="elect">
+        <table class="table table-hover" id="el">
+            <tr>
+                <th>Election ID</th>
+                <th>Name</th>
+                <th>Election Date</th>
+                <th>Constituency</th>
+                <th>Counting Date</th>
+                <th>Candidiate</th>
+                
+            </tr>
+            <tr *ngFor="let e of election" >
+                <td *ngIf="e.Upcoming; else elseBlock">{{e.ElectionId}}</td>
+                <td *ngIf="e.Upcoming; else elseBlock">{{e.Name}}</td>
+                <td *ngIf="e.Upcoming; else elseBlock">{{e.Electiondate}}</td>
+                <td *ngIf="e.Upcoming; else elseBlock">{{e.Constituency}}</td>
+                <td *ngIf="e.Upcoming; else elseBlock">{{e.Countingdate}}</td>
+                <td *ngIf="e.Upcoming; else elseBlock">
+                <button class="btn btn-primary" (click)="viewCandidates(e.ElectionId)">View</button>
+                </td>
+            </tr>
+    </table>
+ 
+
+    <table id="can" cellpadding="7" class="table table-hover">
+        <tr>
+            <th>Candidiate ID</th>
+            <th>Name</th>
+            <th>Party ID</th>
+            <th>Vote</th>
+          
+        </tr>
+        <tr *ngFor="let e of all_candidates" >
+            
+            <td *ngIf="ElectionId==e.ElectionId; else elseBlock">{{e.CandidateId}}</td>
+            <td *ngIf="ElectionId==e.ElectionId; else elseBlock">{{e.Name}}</td>
+            <td *ngIf="ElectionId==e.ElectionId; else elseBlock">{{e.Partyid}}</td>
+            <td *ngIf="ElectionId==e.ElectionId; else elseBlock">
+                <button [disabled]="voted"  class="btn btn-primary" (click)="Vote(e)">Vote</button>
+            </td> 
+    
+        </tr>
+        
+    </table>
+</div>

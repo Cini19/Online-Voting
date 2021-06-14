@@ -1,0 +1,34 @@
+
+
+<div>
+<table class="table table-hover" >
+        <tr><th colspan="4" id="voter">
+            The voter id generated for user {{UserID}} is {{VoterID}}
+        </th></tr>
+        <tr><th colspan="4">Approve Pending Voter Requests</th></tr>
+        <tr>
+            <th>User ID</th>
+            <th>Constituency</th>
+            <th>Admin Approval</th>
+            <th>Approve</th>
+            
+        </tr>
+        <tr *ngFor="let v of voter" >
+            
+            <td *ngIf="!v.Passedstatus; else elseBlock">
+                {{v.Userid}}</td>
+            <td *ngIf="!v.Passedstatus; else elseBlock">{{v.Constituency}}</td>
+            <td *ngIf="!v.Passedstatus; else elseBlock">
+                <span *ngIf="v.Approvedstatus; else elseBlock">
+                   
+                   &#10004;</span>
+                <span *ngIf="!v.Approvedstatus; else elseBlock">&#10008;</span>
+            </td>
+            <td *ngIf="!v.Passedstatus; else elseBlock">
+                <button (click)="ApproveEO(v)" [disabled]="!v.Approvedstatus" class="btn btn-primary">Approve</button>
+            </td>
+            
+        </tr>
+     </table>   
+</div>
+

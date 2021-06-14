@@ -1,0 +1,54 @@
+
+<div>
+        <table class="table table-hover" id="el">
+            <tr><th colspan="6">Candidate List According To Election</th></tr>
+            <tr>
+                <th>Election ID</th>
+                <th>Name</th>
+                <th>Election Date</th>
+                <th>Constituency</th>
+                <th>Counting Date</th>
+                <th>Candidiate</th>
+                
+            </tr>
+            <tr *ngFor="let e of election" >
+                <td *ngIf="e.Upcoming; else elseBlock">{{e.ElectionId}}</td>
+                <td *ngIf="e.Upcoming; else elseBlock">{{e.Name}}</td>
+                <td *ngIf="e.Upcoming; else elseBlock">{{e.Electiondate}}</td>
+                <td *ngIf="e.Upcoming; else elseBlock">{{e.Constituency}}</td>
+                <td *ngIf="e.Upcoming; else elseBlock">{{e.Countingdate}}</td>
+                <td *ngIf="e.Upcoming; else elseBlock">
+                <button class="btn btn-primary" (click)="viewCandidates(e.ElectionId)">View</button>
+                </td>
+            </tr>
+    </table>
+</div> 
+    <table id="can" cellpadding="7" class="table table-hover">
+        <tr>
+            <th>Candidiate ID</th>
+            <th>Name</th>
+            <th>Party ID</th>
+            <th>District</th>
+            <th>Constituency</th>
+            <th>Date Of Birth</th>
+            <th>Mobile No</th>
+        </tr>
+        <tr *ngFor="let e of all_candidates" >
+            
+            <td *ngIf="ElectionId==e.ElectionId; else elseBlock">{{e.CandidateId}}</td>
+            <td *ngIf="ElectionId==e.ElectionId; else elseBlock">{{e.Name}}</td>
+            <td *ngIf="ElectionId==e.ElectionId; else elseBlock">{{e.Partyid}}</td>
+            <td *ngIf="ElectionId==e.ElectionId; else elseBlock">{{e.District}}</td>
+            
+            <td *ngIf="ElectionId==e.ElectionId; else elseBlock">{{e.Constituency}}</td>
+            
+            <td *ngIf="ElectionId==e.ElectionId; else elseBlock">{{e.Dateofbirth}}</td>
+            <td *ngIf="ElectionId==e.ElectionId; else elseBlock">{{e.MobileNo}}</td>
+            
+            
+            <!-- <td>{{e.}}</td>
+            <td>{{e.Countingdate}}</td> 
+            <td><button (click)="viewCandidates(e.ElectionId)">View</button></td> -->
+        </tr>
+        
+    </table>

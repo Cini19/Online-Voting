@@ -1,0 +1,39 @@
+<div class="pop" id="reg">
+        <form #register="ngForm" (ngSubmit)="create_user(register.value)">
+        First Name :<input type="text" class="form-control" ngModel name="Firstname" id="Firstname" placeholder="First Name">
+        <br/>
+        Last Name :<input type="text" class="form-control" ngModel id="Lastname" name="Lastname" placeholder="Last Name">
+        <br/>
+        Password :<input type="password" class="form-control" ngModel name="Password" id ="Password" placeholder="Password">
+        <br/>
+        Date Of Birth :<input type="date" class="form-control" ngModel name="Dateofbirth" id="Dateofbirth" placeholder="dd/mm/yyyy">
+    
+        <div class="radio">Gender : 
+        <label class="radio-inline"><input type="radio" name="Gender"  ngModel  id="GenderM" value="Male">Male</label>
+        &nbsp;&nbsp;
+        <label class="radio-inline"><input type="radio" name="Gender"  ngModel id="GenderF" value="Female">Female</label>
+        <br/>
+        Street :<input type="text" class="form-control" name="Street" ngModel id="Street" placeholder="Street">
+        <br/>
+        Location :<input type="text" class="form-control" ngModel id="Location" name="Location" placeholder="Location">
+        <br/>
+        City :<input type="text" class="form-control" ngModel name="City" id="City" placeholder="City">
+        <br/>
+        State :<input type="text" class="form-control" id="State" ngModel name="State" placeholder="State">
+        <br/>
+        Pincode :<input type="text" class="form-control" ngModel id="Pincode" name="Pincode" placeholder="Pincode">
+        <br/>
+    
+        Mobile No :<input type="text" class="form-control" id="MobileNo" ngModel name="MobileNo" placeholder="Mobile No">
+        <br/>
+        Email Id:<input type="text" class="form-control" ngModel id="EmailId" name="EmailId" placeholder="Email Id">
+        <br/>
+    
+        
+    
+        </div>
+        <button type="submit" class="btn btn-primary">Sign Up</button>  
+        </form>
+    </div>
+    
+    

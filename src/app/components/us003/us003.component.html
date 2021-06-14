@@ -1,0 +1,29 @@
+
+<div>
+    <table class="table table-hover" >
+            <tr><th colspan="5">Voter Id apllication Status</th></tr>
+            <tr>
+                <th>User ID</th>
+                <th>Constituency</th>
+                <th>Admin Approval</th>
+                <th>EO Approval</th>
+                <th>Voter ID</th>
+                
+            </tr>
+            <tr *ngFor="let v of voter" >
+                
+                <td>{{v.Userid}}</td>
+                <td>{{v.Constituency}}</td>
+                <td>
+                    <span *ngIf="v.Approvedstatus; else elseBlock">&#10004;</span>
+                    <span *ngIf="!v.Approvedstatus; else elseBlock">&#10008;</span>
+                </td>
+                <td>
+                    <span *ngIf="v.Passedstatus; else elseBlock">&#10004;</span>
+                    <span *ngIf="!v.Passedstatus; else elseBlock">&#10008;</span>
+                </td>
+                <td>{{v.VoterId}}</td>
+            </tr>
+         </table>   
+    </div>
+    

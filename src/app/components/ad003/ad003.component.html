@@ -1,0 +1,21 @@
+
+<div>
+    <table class="table table-hover" >
+        <tr><th colspan="5">List of all elections</th></tr>
+        <tr>
+            <th>Election ID</th>
+            <th>Name</th>
+            <th>Election Date</th>
+            <th>Constituency</th>
+            <th>Counting Date</th>
+            
+        </tr>
+        <tr *ngFor="let e of election" >
+            <td>{{e.ElectionId}}</td>
+            <td>{{e.Name}}</td>
+            <td>{{e.Electiondate}}</td>
+            <td>{{e.Constituency}}</td>
+            <td>{{e.Countingdate}}</td>
+        </tr>
+     </table>   
+</div>

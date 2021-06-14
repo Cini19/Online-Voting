@@ -1,0 +1,36 @@
+div.pop{
+    /*background-color:rgba(235, 245, 251,.7);*/
+    background-color:rgba(241, 241, 242,0.8);
+    color: #1995AD;
+    font-weight: bold;
+    /* height: 250px; */
+    width:500px;
+    padding: 30px;
+    border-radius: 10px;
+    margin-left: 33%;
+    margin-top: 5%;
+    margin-bottom: 2.5%;
+    box-shadow:5px 5px #bcbabe;
+}
+th{
+    color: #1995AD;
+}
+td{
+    color: #1995AD;
+    font-weight: 500;
+}
+input[type="text"]{
+    color:#1995AD;
+    font-size: 15px;
+    font-weight: bold
+}
+input[type="password"]{
+    color:#1995AD;
+    font-size: 15px;
+    font-weight: bold;
+}
+label{
+    color:#1995AD;
+    font-size: 15px;
+    font-weight: bold;
+}

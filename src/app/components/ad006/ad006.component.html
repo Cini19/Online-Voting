@@ -1,0 +1,39 @@
+
+
+<div>
+    <table class="table table-hover" >
+        <tr><th colspan="6">Add Candidates To Election</th></tr>
+        <tr>
+            <th>Election ID</th>
+            <th>Name</th>
+            <th>Election Date</th>
+            <th>Constituency</th>
+            <th>Counting Date</th>
+            <th>Add candidates</th>
+        </tr>
+        <tr *ngFor="let e of election" >
+            <td>{{e.ElectionId}}</td>
+            <td>{{e.Name}}</td>
+            <td>{{e.Electiondate}}</td>
+            <td>{{e.Constituency}}</td>
+            <td>{{e.Countingdate}}</td>
+            <td><button class="btn btn-primary" (click)="addCandidate(e)">Add candidate</button></td>
+        </tr>
+     </table>   
+</div>
+<div id="addC">
+    <form #cform="ngForm" (ngSubmit)="CreateCandidate(cform.value)">
+            Candidate Id  :<input type="text" class="form-control" ngModel name="CandidateId">
+            <br/>
+            Name :<input type="text" class="form-control" ngModel name="Name">
+            <br/>
+            Party Id :<input type="text" class="form-control" ngModel name="Partyid">
+            <br/>
+            District  :<input type="text" class="form-control" ngModel name="District" /><br/>
+            <!-- Constituency :<input type="text" class="form-control" ngModel name="Constituency"/><br/> -->
+            Dateofbirth :<input type="date" class="form-control" ngModel name="Dateofbirth"><br/>
+            MobileNo : <input type="text" class="form-control" ngModel name="MobileNo"/><br/>
+            <br/>
+            <button class="btn btn-primary" type="submit">Add</button>
+            </form>
+</div>

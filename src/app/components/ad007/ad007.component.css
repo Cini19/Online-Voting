@@ -1,0 +1,35 @@
+table#el{
+    background-color:rgba(241, 241, 242,0.9);
+    color: #1995AD;
+    font-weight: bold;
+    border: #1995AD solid 2px;
+    padding: 30px;
+    width:700px;
+    border-radius: 10px;
+    margin-left: 2.5%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    box-shadow:5px 5px #bcbabe;
+}
+
+th{
+    font-weight: bolder;
+    text-align: center;
+}
+td{
+    text-align: center;
+}
+table#can{
+    background-color:rgba(241, 241, 242,0.9);
+    color: #1995AD;
+    font-weight: bold;
+    border: #1995AD solid 2px;
+    padding: 30px;
+    width:850px;
+    border-radius: 10px;
+    margin-left: 2.5%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    box-shadow:5px 5px #bcbabe;
+    
+}

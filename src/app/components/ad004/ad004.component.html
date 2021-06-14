@@ -1,0 +1,14 @@
+<div id="ad004">
+        <h4>Add Party</h4><br/>
+        <form #padd="ngForm" (ngSubmit)="createParty(padd.value)">
+            Party Id  :<input type="text" class="form-control" ngModel name="PartyId" placeholder="Party Id">
+            <br/>
+            Name :<input type="text" class="form-control" ngModel name="Name" placeholder="Name">
+            <br/>
+            Leader  :<input type="text" class="form-control" ngModel name="Leader" placeholder="Leader">
+            <br/>
+            Symbol :<input type="text" class="form-control" ngModel name="Symbol" placeholder="Symbol">
+            <br/>
+            <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+</div>

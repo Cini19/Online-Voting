@@ -1,0 +1,18 @@
+
+<div>
+    <table class="table table-hover" id="t5" >
+        <tr><th colspan="4">List of all parties</th></tr>
+        <tr>
+            <th>Party ID</th>
+            <th>Name</th>
+            <th>Leader</th>
+            <th>Symbol</th>
+        </tr>
+        <tr *ngFor="let p of party" >
+            <td>{{p.PartyId}}</td>
+            <td>{{p.Name}}</td>
+            <td>{{p.Leader}}</td>
+            <td>{{p.Symbol}}</td>
+        </tr>
+     </table>   
+</div>

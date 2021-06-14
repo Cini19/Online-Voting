@@ -1,0 +1,61 @@
+
+<div>
+        <table class="table table-hover" id="el">
+            <tr><th colspan="6">Published Election Result</th></tr>
+            <tr>
+                <th>Election ID</th>
+                <th>Name</th>
+                <th>Election Date</th>
+                <th>Constituency</th>
+                <th>Counting Date</th>
+                <th>Candidiate</th>
+                
+            </tr>
+            <tr *ngFor="let e of election" >
+                <td *ngIf="e.Upcoming; else elseBlock">{{e.ElectionId}}</td>
+                <td *ngIf="e.Upcoming; else elseBlock">{{e.Name}}</td>
+                <td *ngIf="e.Upcoming; else elseBlock">{{e.Electiondate}}</td>
+                <td *ngIf="e.Upcoming; else elseBlock">{{e.Constituency}}</td>
+                <td *ngIf="e.Upcoming; else elseBlock">{{e.Countingdate}}</td>
+                <td *ngIf="e.Upcoming; else elseBlock">
+                <button class="btn btn-primary" (click)="viewResults(e.ElectionId)">View</button>
+                </td>
+            </tr>
+    </table>
+</div>
+<div id="result"> 
+    <!-- <p id="published_result">Canidate ID {{wr.Candidateid}} won the election<br/>
+        Canidate name:{{CANDIDATENAME}}<br/>
+        PartyID:{{PARTYID}}
+        PartyName:{{PARTYNAME}}
+        Total VoteCount:{{wr.Votecount}}
+    </p> -->
+    <table id="published_result" class="table">
+        <tr><th colspan="2">Election Won By</th></tr>
+        <tr><th>Candidate Name</th><th>{{CANDIDATENAME}}</th></tr>
+        <tr><th>Party Name</th><th>{{PARTYNAME}}</th></tr>
+        <tr><th>Total Vote Count</th><th>{{wr.Votecount}}</th></tr>
+        <tr><th>Won By</th><th>{{WonBy}}</th></tr>
+    </table>
+    <p class="alert alert-danger" [hidden]="Published" id="not-published">Result not published</p>
+
+    <!-- <table  id="r" cellpadding="7" class="table table-hover">
+        <tr>
+            <th>Election ID</th>
+            <th>Candidate ID</th>
+            <th>Votecount</th>
+            <th>Approve</th>
+        </tr>
+        <tr *ngFor="let r of all_results" >
+            
+            <td *ngIf="ElectionId==r.Electionid; else elseBlock">{{r.Electionid}}</td>
+            <td *ngIf="ElectionId==r.Electionid; else elseBlock">{{r.Candidateid}}</td>
+            <td *ngIf="ElectionId==r.Electionid; else elseBlock">{{r.Votecount}}</td>
+            <td *ngIf="ElectionId==r.Electionid; else elseBlock">
+                <button class="btn btn-primary" [disabled]="r.AdminApproval" (click)="Approve(r)">Approve</button></td>
+            
+           
+            </tr>
+        
+    </table> -->
+</div>

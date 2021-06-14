@@ -1,0 +1,20 @@
+
+<div id="ad001">
+    <form #eladd="ngForm" (ngSubmit)="create_el(eladd.value)">
+        <h4>Add Election Details</h4>
+        <br/>
+        Election Id  :<input type="text" class="form-control" ngModel name="ElectionId" placeholder="ElectionId ">
+        <br/>
+        Name :<input type="text" class="form-control" ngModel name="Name" placeholder="Name">
+        <br/>
+        Election Date :<input type="date" class="form-control" ngModel name="Electiondate" placeholder="dd/mm/yyyy">
+        <br/>
+        District  :<input type="text" class="form-control" ngModel name="District" placeholder="District">
+        <br/>
+        Constituency :<input type="text" class="form-control" ngModel name="Constituency" placeholder="Constituency">
+        <br/>
+        Countingdate :<input type="date" class="form-control" ngModel name="Countingdate" placeholder="dd/mm/yyyy">
+        <br/>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+</div>
